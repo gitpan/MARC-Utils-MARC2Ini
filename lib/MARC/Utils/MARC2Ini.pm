@@ -1,10 +1,11 @@
+#---------------------------------------------------------------------
 package MARC::Utils::MARC2Ini;
 
-use 5.008008;
+use 5.008002;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our (@ISA, @EXPORT_OK);
 BEGIN {
@@ -25,6 +26,7 @@ sub quote {
     $data;  # returned
 }
 
+#---------------------------------------------------------------------
 sub marc2ini {
     my( $marc_record ) = @_;
 
@@ -58,6 +60,7 @@ sub marc2ini {
     join( "\n" => @ini ) . "\n";  # returned
 }
 
+#---------------------------------------------------------------------
 sub ini2marc {
     my( $ini_string ) = @_;
 
@@ -139,7 +142,7 @@ Brad Baxter, E<lt>bbaxter@cpan.orgE<gt>
 Copyright (C) 2011 by Brad Baxter
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.8 or,
+it under the same terms as Perl itself, either Perl version 5.8.2 or,
 at your option, any later version of Perl 5 you may have available.
 
 =cut

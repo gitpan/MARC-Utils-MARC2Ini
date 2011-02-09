@@ -1,3 +1,5 @@
+#---------------------------------------------------------------------
+# MARC-Utils-MARC2Ini.t
 
 use Test::More tests => 3;
 BEGIN {
@@ -5,7 +7,7 @@ BEGIN {
         qw( marc2ini ini2marc ) );
 }
 
-# loaded below ...
+# loaded in BEGIN blocks below ...
 my $ini;
 my $marc_as_formatted;
 
@@ -16,8 +18,9 @@ is( $marc_record->as_formatted(), $marc_as_formatted, "marc_record->as_formatted
 $ini = marc2ini( $marc_record );
 
 $marc_record = ini2marc( $ini );
-is( $marc_record->as_formatted(), $marc_as_formatted, "marc_record->as_formatted" );
+is( $marc_record->as_formatted(), $marc_as_formatted, "marc_record->as_formatted (round trip)" );
 
+#---------------------------------------------------------------------
 BEGIN {
     $ini = <<'_end_';
 leader = '01471cjm a2200349 a 4500'
